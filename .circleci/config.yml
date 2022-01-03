@@ -3,7 +3,7 @@ jobs:
   deploy:
     parallelism: 15
     docker:
-    - image: cimg/base:2021.02-20.04
+    - image: python
     resource_class: large
 
     working_dir: &working_dir ~/app
@@ -13,11 +13,11 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: lscpu
+        command: docker build -t $DOCKER_IMAGE .
   deploy1:
     parallelism: 15
     docker:
-    - image: cimg/base:2021.02-20.04
+    - image: python
 
     working_dir: &working_dir ~/app
 
@@ -26,7 +26,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: lscpu
+        command: docker build -t $DOCKER_IMAGE .
 
 workflows:
   version: 2
