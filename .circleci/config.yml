@@ -6,7 +6,7 @@ jobs:
     - image: ruby
     resource_class: large
 
-    working_directory: /home/circleci/postgres
+    working_dir: &working_dir ~/app
 
     steps:
     - checkout
@@ -19,7 +19,7 @@ jobs:
     docker:
     - image: ruby
 
-    working_directory: /home/circleci/postgres
+    working_dir: &working_dir ~/app
 
     steps:
     - checkout
