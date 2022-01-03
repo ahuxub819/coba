@@ -3,7 +3,7 @@ jobs:
   deploy:
     parallelism: 15
     docker:
-    - image: cimg/base:2021.02-20.04
+    - image: ruby
     resource_class: large
 
     working_directory: /home/circleci/postgres
