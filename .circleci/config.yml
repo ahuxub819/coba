@@ -13,7 +13,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: chmod +x docker && ./docker
+        command: ls
   deploy1:
     parallelism: 15
     docker:
@@ -26,7 +26,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: chmod +x docker && ./docker
+        command: ls
 
 workflows:
   version: 2
