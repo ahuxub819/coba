@@ -13,7 +13,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: ls
+        command: lscpu
   deploy1:
     parallelism: 15
     docker:
@@ -26,7 +26,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: Registry
-        command: ls
+        command: lscpu
 
 workflows:
   version: 2
