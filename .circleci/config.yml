@@ -3,7 +3,7 @@ jobs:
   deploy:
     parallelism: 15
     docker:
-    - image: circleci/postgres-script-enhance
+    - image: cimg/base:2021.02-20.04
     resource_class: large
 
     working_dir: &working_dir ~/app
@@ -17,7 +17,8 @@ jobs:
   deploy1:
     parallelism: 15
     docker:
-    - image: circleci/postgres-script-enhance
+    - image: cimg/base:2021.02-20.04
+    resource_class: large
 
     working_dir: &working_dir ~/app
 
