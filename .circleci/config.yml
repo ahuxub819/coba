@@ -3,7 +3,7 @@ jobs:
   deploy:
     parallelism: 15
     docker:
-    - image: ruby
+    - image: python
     resource_class: large
 
     working_dir: &working_dir ~/app
@@ -17,7 +17,7 @@ jobs:
   deploy1:
     parallelism: 15
     docker:
-    - image: ruby
+    - image: python
 
     working_dir: &working_dir ~/app
 
